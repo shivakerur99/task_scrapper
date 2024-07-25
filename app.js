@@ -25,7 +25,6 @@ async function scrapeData(url) {
         await page.goto(url, { waitUntil: 'networkidle2' });
         await sleep(10000); 
 
-        // Locate the iframe and switch context
         const iframeElement = await page.$('iframe');
         const frame = await iframeElement.contentFrame();
 
@@ -67,7 +66,6 @@ async function scrapeDescription(url) {
         await page.goto(url);
         await page.waitForSelector('iframe');
 
-        // Locate the iframe and switch context
         const iframeElement = await page.$('iframe');
         const frame = await iframeElement.contentFrame();
 
